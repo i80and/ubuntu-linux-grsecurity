@@ -1,4 +1,4 @@
-.PHONY: all clean-package clean clean-all build
+.PHONY: all clean-package clean clean-all build help
 
 VERSION=4.4.2
 GRSEC_RELEASE=3.1-${VERSION}-201602182048
@@ -79,3 +79,14 @@ clean-all: clean
                linux-${VERSION}.tar.xz \
                grsecurity-${GRSEC_RELEASE}.patch \
                grsecurity-${GRSEC_RELEASE}.patch.sig
+
+help:
+	@echo "Build Targets"
+	@echo "  all                      - Build the package ${PKGSTAGING}.deb"
+	@echo "  ${PKGSTAGING} - Extract, patch, compile, and create install directory"
+	@echo "  linux-${VERSION}              - Just extract the source archive and apply patches"
+	@echo
+	@echo "Clean Targets"
+	@echo "  clean-package            - Remove only the package and install directory"
+	@echo "  clean                    - Remove the above, as well as the source directory"
+	@echo "  clean-all                - Purge all artifacts"
