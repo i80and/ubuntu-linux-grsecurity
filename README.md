@@ -29,3 +29,15 @@ gpg --recv 6092693E
 # Build linux-grsecurity_<version>.deb
 fakeroot make
 ```
+
+Firmware
+--------
+
+This package does NOT include the firmware that many devices will need to
+function. However, because this kernel will typically be more recent than
+any Ubuntu release, it may refer to firmware not included in your
+[``linux-firmware``](http://packages.ubuntu.com/source/wily/linux-firmware)
+package.
+
+It is best to install the newest available firmware packages from
+<http://archive.ubuntu.com/ubuntu/pool/main/l/linux-firmware/?C=M;O=D>.
