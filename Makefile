@@ -37,6 +37,8 @@ ${PKGSTAGING}: linux-${VERSION}/arch/x86_64/boot/bzImage
 	find ./$@/lib -type f -exec chmod 644 {} \;
 	find ./$@/usr -type f -exec chmod 644 {} \;
 	find ./$@ -type d -exec chmod 755 {} \;
+	find ./$@/DEBIAN -type f -executable -exec chmod 755 {} \;
+	find ./$@/DEBIAN -type f -perm 664 -exec chmod 644 {} \;
 	chmod 600 ./$@/boot/vmlinuz-${VERSION}-grsec
 
 linux-${VERSION}/arch/x86_64/boot/bzImage: | linux-${VERSION}
