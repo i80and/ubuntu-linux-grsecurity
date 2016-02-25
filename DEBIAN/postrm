@@ -23,7 +23,7 @@ use Cwd 'abs_path';
 $|=1;
 
 # Predefined values:
-my $version           = "4.4.2-grsec";
+my $version           = "{{VERSION}}-grsec";
 my $link_in_boot      = "";	# Should be empty, mostly
 my $no_symlink        = "";	# Should be empty, mostly
 my $reverse_symlink   = "";	# Should be empty, mostly

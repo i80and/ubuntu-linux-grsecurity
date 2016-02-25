@@ -21,11 +21,14 @@ ${PKGSTAGING}: linux-${VERSION}/arch/x86_64/boot/bzImage
 	mkdir $@
 	mkdir $@/boot $@/usr
 	cp -R DEBIAN $@/
+	for f in control preinst postinst prerm postrm; do \
+	     sed "s/{{VERSION}}/${VERSION}/" -i "$@/DEBIAN/$$f"; done
+
 	install -m644 linux-${VERSION}/arch/x86_64/boot/bzImage $@/boot/vmlinuz-${VERSION}-grsec
 	cd linux-${VERSION} && make modules_install INSTALL_MOD_PATH=../$@
 	cd linux-${VERSION} && make headers_install INSTALL_HDR_PATH=../$@/usr
 	depmod -b $@ ${VERSION}-grsec
-	rm $@/lib/modules/4.4.2-grsec/build
+	rm $@/lib/modules/${VERSION}-grsec/build
 	install -m644 config $@/boot/config-${VERSION}-${PKGREV}
 	install -Dm644 copyright $@/usr/share/doc/${PKGNAME}/copyright
 	gzip -n9 changelog -c > $@/usr/share/doc/${PKGNAME}/changelog.Debian.gz
@@ -54,7 +57,7 @@ linux-${VERSION}: linux-${VERSION}.tar grsecurity-${GRSEC_RELEASE}.patch
 linux-${VERSION}.tar: linux-${VERSION}.tar.xz linux-${VERSION}.tar.sign
 	xz -kdf linux-${VERSION}.tar.xz
 	touch $@
-	gpg --verify linux-4.4.2.tar.sign linux-4.4.2.tar || rm -f $@
+	gpg --verify linux-${VERSION}.tar.sign linux-${VERSION}.tar || rm -f $@
 
 linux-${VERSION}.tar.sign:
 	curl -OL https://cdn.kernel.org/pub/linux/kernel/v4.x/$@

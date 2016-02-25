@@ -1,6 +1,6 @@
 Package: linux-grsecurity
 Source: linux
-Version: 4.4.2-1
+Version: {{VERSION}}-1
 Architecture: amd64
 Maintainer: Andrew Aldridge <i80and@foxquill.com>
 Pre-Depends: dpkg (>= 1.10.24)
@@ -12,8 +12,8 @@ Replaces: linux-libc-dev
 Provides: fuse-module, ivtv-modules, kvm-api-4, linux-image, linux-image-3.0, linux-libc-dev
 Section: kernel
 Priority: optional
-Description: Linux kernel image for version 4.4.2 on 64 bit x86 SMP
- This package contains the Linux kernel image for version 4.4.2 on
+Description: Linux kernel image for version {{VERSION}} on 64 bit x86 SMP
+ This package contains the Linux kernel image for version {{VERSION}} on
  64 bit x86 SMP.
  .
  Also includes the corresponding System.map file, the modules built by the
