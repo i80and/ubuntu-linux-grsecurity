@@ -1,9 +1,8 @@
 .PHONY: all clean-package clean clean-all build help
 
-VERSION=4.4.2
-GRSEC_RELEASE=3.1-${VERSION}-201602182048
-PATCHES=0001-4.4-revert-btrfs.patch \
-        0001-4.4-revert-xfs.patch
+VERSION=4.4.3
+GRSEC_RELEASE=3.1-${VERSION}-201602282149
+PATCHES=
 N_CORES=`cat /proc/cpuinfo | grep 'core id' | sort | uniq | wc -l`
 
 PKGNAME=linux-grsecurity
