@@ -1,6 +1,6 @@
 Package: linux-grsecurity
 Source: linux
-Version: {{VERSION}}-1
+Version: {{VERSION}}-{{PKGREV}}
 Architecture: amd64
 Maintainer: Andrew Aldridge <i80and@foxquill.com>
 Pre-Depends: dpkg (>= 1.10.24)

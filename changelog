@@ -1,3 +1,9 @@
+linux-grsecurity (4.4.3-2) xenial; urgency=low
+
+  * Upgrade grsecurity to 3.1-4.4.3-201603012143
+
+ -- Andrew Aldridge <i80and@foxquill.com>  Thu, 03 Mar 2016 11:08:53 -0500
+
 linux-grsecurity (4.4.3-1) xenial; urgency=low
 
   * Upgrade to linux 4.4.3, grsecurity to 3.1-4.4.3-201602282149

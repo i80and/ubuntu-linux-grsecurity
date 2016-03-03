@@ -1,12 +1,12 @@
 .PHONY: all clean-package clean clean-all build help
 
 VERSION=4.4.3
-GRSEC_RELEASE=3.1-${VERSION}-201602282149
+GRSEC_RELEASE=3.1-${VERSION}-201603012143
 PATCHES=
 N_CORES=`cat /proc/cpuinfo | grep 'core id' | sort | uniq | wc -l`
 
 PKGNAME=linux-grsecurity
-PKGREV=1
+PKGREV=2
 PKGSTAGING=${PKGNAME}_${VERSION}-${PKGREV}
 
 all: ${PKGSTAGING}.deb
@@ -22,6 +22,8 @@ ${PKGSTAGING}: linux-${VERSION}/arch/x86_64/boot/bzImage
 	cp -R DEBIAN $@/
 	for f in control preinst postinst prerm postrm; do \
 	     sed "s/{{VERSION}}/${VERSION}/" -i "$@/DEBIAN/$$f"; done
+	for f in control preinst postinst prerm postrm; do \
+	     sed "s/{{PKGREV}}/${PKGREV}/" -i "$@/DEBIAN/$$f"; done
 
 	install -m644 linux-${VERSION}/arch/x86_64/boot/bzImage $@/boot/vmlinuz-${VERSION}-grsec
 	cd linux-${VERSION} && make modules_install INSTALL_MOD_PATH=../$@
