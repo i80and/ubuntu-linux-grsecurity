@@ -1,3 +1,9 @@
+linux-grsecurity (4.4.6-3) xenial; urgency=low
+
+  * Update grsecurity to 201604021734
+
+ -- Andrew Aldridge <i80and@foxquill.com>  Mon, 04 Apr 2016 11:08:11 -0400
+
 linux-grsecurity (4.4.6-2) xenial; urgency=low
 
   * Update grsecurity to 201603221748, fixing size_overflow
