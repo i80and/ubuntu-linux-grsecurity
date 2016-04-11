@@ -1,3 +1,9 @@
+linux-grsecurity (4.4.6-4) xenial; urgency=low
+
+  * Update grsecurity to 201604100830
+
+ -- Andrew Aldridge <i80and@foxquill.com>  Mon, 11 Apr 2016 11:24:56 -0400
+
 linux-grsecurity (4.4.6-3) xenial; urgency=low
 
   * Update grsecurity to 201604021734

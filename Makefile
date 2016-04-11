@@ -1,12 +1,12 @@
 .PHONY: all clean-package clean clean-all build help
 
 VERSION=4.4.6
-GRSEC_RELEASE=3.1-${VERSION}-201604021734
+GRSEC_RELEASE=3.1-${VERSION}-201604100830
 PATCHES=
 N_CORES=`cat /proc/cpuinfo | grep 'core id' | sort | uniq | wc -l`
 
 PKGNAME=linux-grsecurity
-PKGREV=3
+PKGREV=4
 PKGSTAGING=${PKGNAME}_${VERSION}-${PKGREV}
 
 all: ${PKGSTAGING}.deb
