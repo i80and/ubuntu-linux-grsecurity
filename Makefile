@@ -1,7 +1,7 @@
 .PHONY: all clean-package clean clean-all build help
 
-VERSION=4.4.7
-GRSEC_RELEASE=3.1-${VERSION}-201604152208
+VERSION=4.5.5
+GRSEC_RELEASE=3.1-${VERSION}-201605211442
 PATCHES=
 N_CORES=`cat /proc/cpuinfo | grep 'core id' | sort | uniq | wc -l`
 
