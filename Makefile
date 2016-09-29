@@ -67,11 +67,11 @@ linux-${VERSION}.tar.xz:
 	curl -OL https://cdn.kernel.org/pub/linux/kernel/v4.x/$@
 
 grsecurity-${GRSEC_RELEASE}.patch: grsecurity-${GRSEC_RELEASE}.patch.sig
-	curl -OL http://grsecurity.net/test/$@
+	curl -OL http://mirrors.muarf.org/grsecurity/test/$@
 	gpg --verify $@.sig $@ || rm -f $@
 
 grsecurity-${GRSEC_RELEASE}.patch.sig:
-	curl -OL http://grsecurity.net/test/$@
+	curl -OL http://mirrors.muarf.org/grsecurity/test/$@
 
 clean-package:
 	rm -rf ${PKGSTAGING} ${PKGSTAGING}.deb
