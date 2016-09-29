@@ -67,11 +67,11 @@ linux-${VERSION}.tar.xz:
 	curl -OL https://cdn.kernel.org/pub/linux/kernel/v4.x/$@
 
 grsecurity-${GRSEC_RELEASE}.patch: grsecurity-${GRSEC_RELEASE}.patch.sig
-	curl -OL http://mirrors.muarf.org/grsecurity/test/$@
+	curl -OL http://deb.digdeo.fr/grsecurity-archives/kernel-4.5/$@
 	gpg --verify $@.sig $@ || rm -f $@
 
 grsecurity-${GRSEC_RELEASE}.patch.sig:
-	curl -OL http://mirrors.muarf.org/grsecurity/test/$@
+	curl -OL http://deb.digdeo.fr/grsecurity-archives/kernel-4.5/$@
 
 clean-package:
 	rm -rf ${PKGSTAGING} ${PKGSTAGING}.deb
