@@ -1,6 +1,6 @@
 .PHONY: all clean-package clean clean-all build help
 
-VERSION=4.5.7
+VERSION=4.7.5
 GRSEC_RELEASE=3.1-${VERSION}-201606202152
 PATCHES=
 N_CORES=`cat /proc/cpuinfo | grep 'core id' | sort | uniq | wc -l`
@@ -67,11 +67,11 @@ linux-${VERSION}.tar.xz:
 	curl -OL https://cdn.kernel.org/pub/linux/kernel/v4.x/$@
 
 grsecurity-${GRSEC_RELEASE}.patch: grsecurity-${GRSEC_RELEASE}.patch.sig
-	curl -OL http://deb.digdeo.fr/grsecurity-archives/kernel-4.5/$@
+	curl -OL http://deb.digdeo.fr/grsecurity-archives/kernel-4.7/$@
 	gpg --verify $@.sig $@ || rm -f $@
 
 grsecurity-${GRSEC_RELEASE}.patch.sig:
-	curl -OL http://deb.digdeo.fr/grsecurity-archives/kernel-4.5/$@
+	curl -OL http://deb.digdeo.fr/grsecurity-archives/kernel-4.7/$@
 
 clean-package:
 	rm -rf ${PKGSTAGING} ${PKGSTAGING}.deb
