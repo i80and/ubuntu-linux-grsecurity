@@ -21,10 +21,10 @@ Build Instructions
 
 ```
 # Import Brad Spengler's GPG key
-gpg --recv 2525FE49
+gpg --recv DE9452CE46F42094907F108B44D1C0F82525FE49
 
 # Import the Linux stable GPG key
-gpg --recv 6092693E
+gpg --recv 647F28654894E3BD457199BE38DBBDC86092693E
 
 # Build linux-grsecurity_<version>.deb
 fakeroot make
