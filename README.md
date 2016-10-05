@@ -21,7 +21,9 @@ Build Instructions
 
 ```
 # Import Brad Spengler's GPG key
-gpg --recv 2525FE49
+
+wget https://grsecurity.net/spender-gpg-key.asc
+gpg --import spender-gpg-key.asc
 
 # Import the Linux stable GPG key
 gpg --recv 6092693E
